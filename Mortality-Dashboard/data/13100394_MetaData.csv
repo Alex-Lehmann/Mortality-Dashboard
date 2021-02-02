@@ -1,0 +1,154 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Leading causes of death, total population, by age group",13100394,102-0561,"https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039401",1;2;3;20;21;22;23;24;25,"CURRENT - a cube available to the public and that is current",Annual,2000-01-01,2019-01-01,5
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+1,"Geography, place of residence",4;5,
+2,"Age at time of death",6,
+3,Sex,10,
+4,"Leading causes of death (ICD-10)",11;12;13,
+5,Characteristics,,
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+1,"Canada, place of residence",[11124],1,,,,
+2,"Age at time of death, all ages",,1,,,7;8,
+2,"Age at time of death, 1 to 4 years",,2,21,,9,
+2,"Age at time of death, 5 to 9 years",,3,21,,,
+2,"Age at time of death, 10 to 14 years",,4,21,,,
+2,"Age at time of death, 15 to 19 years",,5,22,,,
+2,"Age at time of death, 20 to 24 years",,6,22,,,
+2,"Age at time of death, 25 to 29 years",,7,23,,,
+2,"Age at time of death, 30 to 34 years",,8,23,,,
+2,"Age at time of death, 35 to 39 years",,9,24,,,
+2,"Age at time of death, 40 to 44 years",,10,24,,,
+2,"Age at time of death, 45 to 49 years",,11,25,,,
+2,"Age at time of death, 50 to 54 years",,12,25,,,
+2,"Age at time of death, 55 to 59 years",,13,26,,,
+2,"Age at time of death, 60 to 64 years",,14,26,,,
+2,"Age at time of death, 65 to 69 years",,15,27,,,
+2,"Age at time of death, 70 to 74 years",,16,27,,,
+2,"Age at time of death, 75 to 79 years",,17,28,,,
+2,"Age at time of death, 80 to 84 years",,18,28,,,
+2,"Age at time of death, 85 to 89 years",,19,29,,,
+2,"Age at time of death, 90 years and over",,20,29,,,
+2,"Age at time of death, 1 to 14 years",,21,1,,,
+2,"Age at time of death, 15 to 24",,22,1,,,
+2,"Age at time of death, 25 to 34 years",,23,1,,,
+2,"Age at time of death, 35 to 44 years",,24,1,,,
+2,"Age at time of death, 45 to 54 years",,25,1,,,
+2,"Age at time of death, 55 to 64 years",,26,1,,,
+2,"Age at time of death, 65 to 74 years",,27,1,,,
+2,"Age at time of death, 75 to 84 years",,28,1,,,
+2,"Age at time of death, 85 and over",,29,1,,,
+3,"Both sexes",,1,,,,
+3,Males,,2,1,,,
+3,Females,,3,1,,,
+4,"Salmonella infections",[A01-A02],1,100,,,
+4,"Shigellosis and amoebiasis","[A03, A06]",2,100,,,
+4,Tuberculosis,[A16-A19],3,100,,,
+4,"Whooping cough",[A37],4,100,,,
+4,"Scarlet fever and erysipelas","[A38, A46]",5,100,,,
+4,"Meningococcal infection",[A39],6,100,,,
+4,Sepsis,[A40-A41],7,100,,,
+4,Syphilis,[A50-A53],8,100,,,
+4,"Acute poliomyelitis",[A80],9,100,,,
+4,"Arthropod-borne viral encephalitis","[A83-A84, A85.2]",10,100,,,
+4,Measles,[B05],11,100,,,
+4,"Viral hepatitis",[B15-B19],12,100,,,
+4,"Human immunodeficiency virus [HIV] disease",[B20-B24],13,100,,,
+4,Malaria,[B50-B54],14,100,,,
+4,"Malignant neoplasms",[C00-C97],15,100,,,
+4,"In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behaviour",[D00-D48],16,100,,,
+4,Anaemias,[D50-D64],17,100,,,
+4,"Diabetes mellitus",[E10-E14],18,100,,,
+4,"Nutritional deficiencies",[E40-E64],19,100,,,
+4,Meningitis,"[G00, G03]",20,100,,,
+4,"Parkinson's disease",[G20-G21],21,100,,,
+4,"Alzheimer's disease",[G30],22,100,,,
+4,"Diseases of heart","[I00-I09, I11, I13, I20-I51]",23,100,,,
+4,"Essential hypertension and hypertensive renal disease","[I10, I12, I15]",24,100,,,
+4,"Cerebrovascular diseases",[I60-I69],25,100,,,
+4,Atherosclerosis,[I70],26,100,,,
+4,"Aortic aneurysm and dissection",[I71],27,100,,,
+4,"Influenza and pneumonia",[J09-J18],28,100,,,
+4,"Acute bronchitis and bronchiolitis",[J20-J21],29,100,,,
+4,"Chronic lower respiratory diseases",[J40-J47],30,100,,,
+4,"Pneumoconioses and chemical effects","[J60-J66, J68]",31,100,,,
+4,"Pneumonitis due to solids and liquids",[J69],32,100,,,
+4,"Peptic ulcer",[K25-K28],33,100,,,
+4,"Diseases of appendix",[K35-K38],34,100,,,
+4,Hernia,[K40-K46],35,100,,,
+4,"Chronic liver disease and cirrhosis","[K70, K73-K74]",36,100,,,
+4,"Cholelithiasis and other disorders of gallbladder",[K80-K82],37,100,,,
+4,"Nephritis, nephrotic syndrome and nephrosis","[N00-N07, N17-N19, N25-N27]",38,100,,,
+4,"Infections of kidney","[N10-N12, N13.6, N15.1]",39,100,,,
+4,"Hyperplasia of prostate",[N40],40,100,,,
+4,"Inflammatory diseases of female pelvic organs",[N70-N76],41,100,,,
+4,"Pregnancy, childbirth and the puerperium",[O00-O99],42,100,,,
+4,"Certain conditions originating in the perinatal period",[P00-P96],43,100,,,
+4,"Congenital malformations, deformations and chromosomal abnormalities",[Q00-Q99],44,100,,,
+4,"Accidents (unintentional injuries)","[V01-X59, Y85-Y86]",45,100,,,
+4,"Intentional self-harm (suicide)","[X60-X84, Y87.0]",46,100,,,
+4,"Assault (homicide)","[X85-Y09, Y87.1]",47,100,,,
+4,"Legal intervention","[Y35, Y89.0]",48,100,,,
+4,"Operations of war and their sequelae","[Y36, Y89.1]",49,100,,,
+4,"Complications of medical and surgical care","[Y40-Y84, Y88]",50,100,,,
+4,"Other causes of death",,51,100,,14,
+4,"Total, all causes of death",[A00-Y89],100,,,,
+5,"Rank of leading causes of death",,1,,,15,
+5,"Number of deaths",,2,,,,
+5,"Percentage of deaths",,3,,,,
+5,"Age-specific mortality rate per 100,000 population",,4,,,16;17;18;19,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period",..
+"less than the limit of detection",<LOD
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded",0s
+"data quality: excellent",A
+"data quality: very good",B
+"data quality: good",C
+"data quality: acceptable",D
+"use with caution",E
+"too unreliable to be published",F
+"not applicable",...
+preliminary,p
+revised,r
+"suppressed to meet the confidentiality requirements of the Statistics Act",x
+terminated,t
+
+"Survey Code","Survey Name"
+3233,"Vital Statistics - Death Database"
+
+"Subject Code","Subject Name"
+13,Health
+
+"Note ID",Note
+1,"Sources: Statistics Canada, Canadian Vital Statistics - Death database (CVSD) and population estimates"
+2,"Death refers to the permanent disappearance of all evidence of life at any time after a live birth has taken place. Stillbirths are excluded."
+3,"The following standard symbols are used in this Statistics Canada table: (..) for figures not available for a specific reference period, (...) for figures not applicable and (x) for figures suppressed to meet the confidentiality requirements of the Statistics Act."
+4,"The geographic distribution of deaths in this table is based on the deceased's usual place of residence."
+5,"Counts in this table exclude deaths of non-residents of Canada."
+6,"Age attained at the last birthday preceding death."
+7,"The category ""Age at time of death, all ages"" includes the number of deaths for children aged under one year old."
+8,"The deaths for which age is not stated are included in the ""Age at the time of death, all ages"" category but not distributed among age groups."
+9,"For ""Age at time of death, 1 to 4 years"", mortality rate calculation uses population estimates for 0 to 4 year olds less live births in calendar year. Starting with the 2012 reference year, the mortality rate for 1 to 4 year olds is based on the population estimate for this age group."
+10,"For data year 2000 to 2009, missing data on sex of the deceased were imputed based on death registration number. Starting with 2010 data year, missing data on sex of the deceased were imputed based on the cause of death information and a logistic regression."
+11,"The cause of death tabulated is the underlying cause of death. This is defined as (a) the disease or injury which initiated the train of events leading directly to death, or (b) the circumstances of the accident or violence which produced the fatal injury. The underlying cause is selected from the conditions listed on the medical certificate of cause of death."
+12,"World Health Organization (WHO), International Statistical Classification of Diseases and Related Health Problems, 10th Revision (ICD-10)."
+13,"The list for ranking leading causes of death that is used in this table is based on the list that was developed and that is been used by the National Center for Health Statistics of the United States in their annual report on leading causes of death."
+14,"""Other causes of death"" is a residual category, which includes all causes of death that are not part of the 50 leading causes of death list."
+15,"The ranking of the leading causes of death is based on the number of deaths."
+16,"For ""Age at time of death, all ages"", the mortality rate represents the crude death rate, or the number of deaths (including the deaths of children aged under one year old) during a given year per 100,000 population on July 1 of the same year."
+17,"The age-specific mortality rate represents the number of deaths in a particular age group during a given year per 100,000 population in the same age group of the same year."
+18,"For data year 2000 to 2009, the population estimates used to calculate the mortality rates are presented in the Appendix 3 of the publication ""Leading Causes of Death in Canada"" (catalogue number 84-215-XIE)."
+19,"Starting with the 2010 data year, information regarding the population estimates used for the mortality rate calculations is found in the ""Data sources"" entry for survey number 3233."
+20,"The totals (all causes of death) by age group and/ or sex presented in this table may not reflect those given in tables 13-10-0707-01 to 13-10-0716-01, 13-10-0368-01 due to the correction of age or sex information that was inconsistent with the underlying cause of death."
+21,"During the production of each year's birth/death/stillbirth statistics, data from previous years may be revised to reflect any updates or changes that have been received from the provincial and territorial vital statistics registrars."
+22,"Starting with the 2013 reference year, information regarding new and terminated cause of death codes, as well as any changes to the cause of death descriptions, are available upon request; please contact Statistics Canada's Statistical Information Service (toll-free 1-800-263-1136; 514-283-8300; STATCAN.infostats-infostats.STATCAN@Canada.ca)."
+23,"Starting with the 2013 reference year, a new automated coding system was used to select the underlying cause of death. In 2017, an updated version of this coding system was implemented. For more information or to obtain documentation regarding the impact of these changes, please contact Statistics Canada's Statistical Information Service (toll-free 1-800-263-1136; 514-283-8300; STATCAN.infostats-infostats.STATCAN@Canada.ca)."
+24,"Due to improvements in methodology and timeliness, the duration of data collection has been shortened compared to previous years. As a result, there may have been fewer deaths captured by the time of the release. The 2017 and 2018 data were revised on November 26, 2020 and the 2019 data are considered preliminary."
+25,"2017, 2018 and 2019 data for Yukon are not available."
+
+"Correction ID","Correction Date","Correction Note"
+
+

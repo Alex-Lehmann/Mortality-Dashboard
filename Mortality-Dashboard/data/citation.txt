@@ -1,0 +1,4 @@
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310039401
+Statistics Canada. Table 13-10-0394-01  Leading causes of death, total population, by age group
+https://doi.org/10.25318/1310039401-eng
+Retrieved 2021-01-29
