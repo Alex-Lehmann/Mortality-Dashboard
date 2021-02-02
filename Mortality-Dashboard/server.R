@@ -7,8 +7,8 @@
 #    http://shiny.rstudio.com/
 #
 
-library(tidyverse)
-library(shiny)
+library(tidyverse, lib.loc="lib")
+library(shiny, lib.loc="lib")
 
 shinyServer(function(input, output){
   
