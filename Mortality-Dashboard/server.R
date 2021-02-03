@@ -1,14 +1,5 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-library(tidyverse, lib.loc="lib")
 library(shiny, lib.loc="lib")
+library(tidyverse, lib.loc="lib")
 
 shinyServer(function(input, output){
   
@@ -34,67 +25,34 @@ shinyServer(function(input, output){
     colnames(x) = c("Year", "y")
     
     # Generate plot
-    if (!input$tsSmooth & !input$tsLM){
-      ggplot(x, aes(x=Year, y=y)) +
-        geom_point() +
-        ggtitle(str_to_title(paste0(input$tsCharacteristic,
-                                    " From ",
-                                    input$tsCause,
-                                    ", ",
-                                    input$tsRange[1], "-", input$tsRange[2],
-                                    ", ",
-                                    input$dataSource,
-                                    ", ",
-                                    input$tsAge))) +
-        xlab("Year") +
-        ylab(str_to_title(input$tsCharacteristic))
-    } else if (input$tsSmooth & !input$tsLM){
-      ggplot(x, aes(x=Year, y=y)) +
-        geom_point() +
-        geom_smooth(method="loess", formula=y~x) +
-        ggtitle(str_to_title(paste0(input$tsCharacteristic,
-                                    " From ",
-                                    input$tsCause,
-                                    ", ",
-                                    input$tsRange[1], "-", input$tsRange[2],
-                                    ", ",
-                                    input$dataSource,
-                                    ", ",
-                                    input$tsAge))) +
-        xlab("Year") +
-        ylab(str_to_title(input$tsCharacteristic))
-    } else if (!input$tsSmooth & input$tsLM){
-      ggplot(x, aes(x=Year, y=y)) +
-        geom_point() +
-        geom_smooth(method="lm", color="red", formula=y~x) +
-        ggtitle(str_to_title(paste0(input$tsCharacteristic,
-                                    " From ",
-                                    input$tsCause,
-                                    ", ",
-                                    input$tsRange[1], "-", input$tsRange[2],
-                                    ", ",
-                                    input$dataSource,
-                                    ", ",
-                                    input$tsAge))) +
-        xlab("Year") +
-        ylab(str_to_title(input$tsCharacteristic))
-    } else if (input$tsSmooth & input$tsLM){
-      ggplot(x, aes(x=Year, y=y)) +
-        geom_point() +
-        geom_smooth(method="loess", formula=y~x) +
-        geom_smooth(method="lm", color="red", formula=y~x) +
-        ggtitle(str_to_title(paste0(input$tsCharacteristic,
-                                    " From ",
-                                    input$tsCause,
-                                    ", ",
-                                    input$tsRange[1], "-", input$tsRange[2],
-                                    ", ",
-                                    input$dataSource,
-                                    ", ",
-                                    input$tsAge))) +
-        xlab("Year") +
-        ylab(str_to_title(input$tsCharacteristic))
+    tsPlot = ggplot(x, aes(x=Year, y=y)) +
+      geom_point() +
+      xlab("Year") +
+      ylab(str_to_title(input$tsCharacteristic))
+    
+    # Dynamic title
+    if (input$tsRange[1] == input$tsRange[2]){
+      tsDates = input$tsRange[1]
+    } else {
+      tsDates = paste0(input$tsRange[1], "-", input$tsRange[2])
     }
+    tsPlot = tsPlot +
+      ggtitle(str_to_title(paste0(input$tsCharacteristic,
+                                  " From ",
+                                  input$tsCause,
+                                  ", ",
+                                  tsDates,
+                                  ", ",
+                                  input$dataSource,
+                                  ", ",
+                                  input$tsAge)))
+    
+    # Smoothers
+    if (input$tsSmooth){tsPlot = tsPlot + geom_smooth(method="loess", formula=y~x, color="blue")}
+    if (input$tsLM){tsPlot = tsPlot + geom_smooth(method="lm", formula=y~x, color="red")}
+    
+    # Return final plot
+    tsPlot
   })
   
   # Barplot ###############################################################################
@@ -110,20 +68,37 @@ shinyServer(function(input, output){
       summarize(Value = sum(Value)) %>%
       top_n(input$barNumber, Value)
     
+    # Shorten cause names to ICD-10 codes
+    x = mutate(x, Cause = str_extract(Cause, "(\\[.*\\]$)|(\\bOther causes of death\\b)"))
+    
     # Generate plot
-    ggplot(x, aes(x=reorder(Cause, -Value), y=Value)) +
+    barplot = ggplot(x, aes(x=reorder(Cause, -Value), y=Value)) +
       geom_bar(stat="boxplot") +
       theme(axis.text.x = element_text(angle=90, vjust=0.5, hjust=1)) +
-      scale_fill_gradient(low="red", high="blue") +
+      xlab("Cause of Death [ICD-10]") +
+      ylab("Number of DeathS")
+    
+    # Dynamic title
+    if (input$barRange[1] == input$barRange[2]){
+      barDates = input$barRange[1]
+    } else {
+      barDates = paste0(input$barRange[1], "-", input$barRange[2])
+    }
+    barplot = barplot +
       ggtitle(str_to_title(paste0("Top ",
                                   input$barNumber,
                                   " Leading Causes of Death in Canada, ",
-                                  input$barRange[1], "-", input$barRange[2],
+                                  barDates,
                                   ", ",
                                   input$dataSource,
                                   ", ",
-                                  input$barAge))) +
-      xlab("Cause of Death") +
-      ylab("Number of DeathS")
+                                  input$barAge)))
+    barplot
   })
+  
+  # Hacky LinkedIn badge ##################################################################
+  output$badge = renderImage({
+    list(src = "assets/img/linkedin badge.png",
+         contentType = "image/png")
+  }, deleteFile = FALSE)
 })

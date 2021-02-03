@@ -1,12 +1,3 @@
-# 
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
 library(shiny, lib.loc="lib")
 library(tidyverse, lib.loc="lib")
 
@@ -70,12 +61,12 @@ shinyUI(fluidPage(
         
         mainPanel(
             tabsetPanel(type="tabs", id="activeTab",
-                        tabPanel("Time Series", value="ts", plotOutput("tsPlot")),
                         tabPanel("Barplot", value="barplot", plotOutput("barplot")),
+                        tabPanel("Time Series", value="ts", plotOutput("tsPlot")),
                         tabPanel("About", value="about",
                                  tabsetPanel(type="pills",
-                                             tabPanel("Data", source("about/aboutData.R")$value()),
-                                             tabPanel("Author", source("about/aboutAuthor.R")$value()))))
+                                             tabPanel("Data", source("assets/ui/aboutData.R")$value()),
+                                             tabPanel("Author", source("assets/ui/aboutAuthor.R")$value()))))
         )
     )
 ))
